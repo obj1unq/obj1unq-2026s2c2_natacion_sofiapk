@@ -1,0 +1,156 @@
+import natacion.*
+
+// Aclaraciones!
+//
+// Los casos de prueba están asumiendo que los objetos son instancias de clases,
+// pero si quisieras  modelar algunos de éstos como objetos autodefinidos 
+// podés eliminar la referencia
+//
+// Además pueden existir más objetos para referenciar aquí, depende de tu modelo,
+// solo están mencionados los mínimos para que los casos de prueba sean entendibles
+//
+// Los casos de prueba no alcanzan para inferir
+// cuál objeto es receptor de un mensaje y cuál un parámetro. 
+// por ejemplo, si dice "pepita come alpiste", esto podría ser interpretado como
+// `pepita.comer(alpiste)`,  `alpiste.esComido(pepita)`, `pepita.comida(alpiste) ; pepita.comer()` o tambien otras variantes que
+// requieran más parámetros como por ejemplo: `roque.alimentar(pepita, alpiste)`. 
+// Algunas serán mejores que otras, quizás algunas opciones sean similares.
+// En definitiva, los casos de prueba sólo cuentan la historia, pero es responsabilidad tuya decidir como es el modelo.
+
+// Por otro lado, las frases del estilo "se puede hacer algo" no están pidiendo que lo hagas, solo avisa que se podría hacer
+// como para que hagas el assert corresponiente. Si en ese momento decidís hacer la acción, 
+// estarías modificando el caso de prueba.
+
+describe "natacion" {
+
+
+  //const debi = una docente básica que no es guardavida
+  //const isa = un docente básico que sí es guardavida
+  //const nico = un docente dedicado al estilo pecho que no es guardavida
+  //const mara = una docente externa que no es guardavida y acepta hasta 2 estudiantes menores de 13 años por curso
+
+  //const milena = Una estudiante de edad 10 que domina los estilos croll y pecho
+  //const rodrigo = Un estudiante de edad 9 domina los estilos mariposa y pecho
+  //const matilda = Un estudiante de edad 9 que domina los estilos croll y pecho
+  //const elias = Un estudiante de edad 15 que no domina ningún estilo
+  //const camilo = Un estudiante de edad 16 que domina los estilos croll, pecho y espalda
+  //const juana = Una estudiante de edad 16 que domina el estilo croll
+
+  // const martes = Un curso base que tiene a debi como docente, el cupo máximo es 3 y tiene como inscriptos a milena y rodrigo
+  // const jueves = Un curso base que tiene a isa como docente, el cupo máximo es 3 y tiene inscriptos a milena y rodrigo
+  // const viernes = Un curso base que tiene a nico como docente, el cupo máximo es 3 y tiene inscripto a milena y rodrigo
+  // const colonia = Un curso escuela de niños que tiene a debi como docente, el cupo máximo es 3 y tiene inscriptos a milena y rodrigo
+  // const rehabilitacion = un curso terapéutico que tiene a mara como docente, el cupo máximo es 4, y tiene inscriptos a milena y camilo. Para el punto 2, la recaudacion bruta es de 300
+
+  //const toninas = Es una escuela que tiene 1000 de dinero guardado y dicta los cursos martes, jueves, viernes, colonia y rehabilitacion
+
+  test "1. a. curso basico (no guardavida)" {
+      assert.that(true)    
+  //     //- milena no puede inscribirse al curso de los martes (porque ya está inscripta)
+  //     //- En cambio, matilda sí se puede inscribir a los cursos de los martes
+  //     //- camilo también se puede inscribir al curso de los martes
+  //     //- Pero Elías no se puede inscribir al curso de los martes (porque no sabe ningún estilo y debi no es guardavida)
+
+  //     //-Al intentar inscribir a elias en el curso de los martes estamos en un problema, porque no se debería permitir
+  //     //-Inscribir a matilda en el curso de los martes (no ocurre ningún problema)
+  //     //-Luego de haber incripto a matilda, los nuevos inscriptos del curso de los martes son milena, rodrigo y matilda
+  //     //-Como ahora se completó el curso, camilo ya no puede ser inscripto. 
+  }
+
+  // test "1. b. curso basico (guardavida)" {
+  //     // - En el curso de los jueves sí se puede inscribir elias (no sabe ningún estilo pero isa es guardavida)
+  //     // - Luego de incribir a elías en el curso de los jueves, los inscriptos de dicho curso son milena, rodrigo y elias 
+  // }
+
+  // test "1.c. curso basico docente dedicado" {
+  //     // - En el curso de los viernes no se pude inscribir a milena (ya está inscripta)
+  //     // - Pero matilda sí puede ser inscripta en el curso de los viernes
+  //     // - Camilo también puede ser inscripto en el curso de los viernes
+  //     // - Quien no puede ser inscripta en el curso de los viernes es juana (porque no domina el estilo pecho)
+  //     // - Por lo tanto si se intenta inscribir a juana en el curso de los viernes estamos en un problema
+  //     // - Al inscribir a matilda en el curso de los viernes, los nuevos inscriptos de ese curso son milena, rodrigo y matilda
+  //     // - Ahora camilo ya no puede ser inscripto (se completo el cupo)
+  //     // - Si intentás  inscribir a camilo estamos en un problema, porque no se puede
+  // }
+
+//   test "1.d. escuela de niños" {
+//       // milena no se puede inscribir en la colonia (ya está inscripta)
+//       // matilda sí se puede inscribir en la colonia 
+//       // camilo no se puede inscribi en la colonia (es muy grande)
+//       // elias no se puede inscribir en la colonia (no sabe ningún estilo y debi no es guardavida)
+//       // Se intenta inscribir a camilo a la colonia, pero estamos en un problema porque no se puede!
+//       // Se intenta inscribir a elias a la colonia, pero estamos en un problema porque no se puede!
+//       // Se inscribe a matilda a la colonia sin problema
+//       // Los inscriptos a la colonia ahora son milena, rodrigo y matilda
+
+//  }
+
+  // test "1.e terapeutico (docente externo)" {
+  //     // milena no se puede inscribir a la rehabilitacion (ya está inscripta)
+  //     // juana no se puede inscribir a la rehabilitación (no domina ningún estilo relajante)
+  //     // matilda sí se puede inscribir a la rehabilitación 
+  //     // rodrigo sí se puede inscribir a la rehabilitación 
+  //     // inscribir a matilda a la rehabilitación (se puede sin problemas)
+  //     // Ahora si se intenta inscribir a rodrigo estaríamos en un problema porque se llegó al límite de menores de 13 que acepta mara
+  //     // Los inscriptos a la rehabilitación son milena, camilo y matilda
+  // }
+
+  //punto 2
+
+  // test "2.1 recaudacion" {
+
+  //   // Asegurarse que la reacudación de los martes y la de los jueves es 7.9        
+  //   // Si las cuentas no te dan, estos son los parciales:
+  //   //  por milena = 20 - 2 - 2 = 16
+  //   //  por rodrigo = rodrigo =  20 - 2 -3 =  15
+  //   //  bruta = 16 + 15 = 31
+  //   //  debi/isa = 20 + 31 * 0.1 = 20 + 3.1 = 23.1 
+  //   //  total =  31 - 23.1 = 7.9 
+  
+
+  //   // Asegurarse que la recaudación del curso de los viernes es 6.35
+  //   // Si las cuentas no te dan, éstos son los parciales:
+  //   //  por milena = 20 - 2 - 2 = 16
+  //   //  por rodrigo =  20 - 2 -3 =  15
+  //   //  bruta = 16 + 15 = 31
+  //   //  nico = 20 + 31 * 0.15 = 20 + 4.65 = 24.65
+  //   //  total = 31 - 24.65 = 6.35
+    
+    
+  //   // Asegurarse que la recaudación del curso colonia 457.9
+  //   // Si las cuentas no te dan, éstos son los parciales:
+  //   //  por milena = 20 - 2 - 2 = 16
+  //   //  por rodrigo = rodrigo =  20 - 2 -3 =  15
+  //   //  bruta = 500 + 16 + 15 = 531
+  //   //  debi = 20 + 531 * 0.1 = 20 + 53.1 = 73.1 
+  //   //  total = 531 - 73.1 = 447.9
+    
+  //   // Asegurarse que la recaudación de la rehabilitación es 244
+  //   // Si las cuentas no te dan, éstoso son los parciales:
+  //   //  bruta = 300
+  //   //  mara = 20 + 300 * 0.1 + 3 * 2 = 20 + 30 + 6 = 56
+  //   //  total = 300 - 56 = 244
+    
+
+  //   // Asegurarse que la recaudación de la escuela toninas es 724.05
+  //   // Si las cuentas no te dan, acá están los valores:
+  //   //   7.9 + 7.9 + 6.35 + 457.9 + 244 = 724.05
+    
+  //   // - cobrar la recaudación mensual de la escuela toninas
+  //   // - el total de dinero guardado en la escuela es 1724.05
+    
+  //   // - cobrar nuevamente la recaudación mensual de la escuela toninas
+  //   // - el total de dinero guardado en la escuela es ahora 2448.1
+    
+  // }
+
+//punto 3
+  // test "3 consultas" {
+  //   // Buscar un curso con el estilo espalda en la escuela toninas: La única opción posible es rehabilitación
+  //   // Inscribir a camilo en el curso de los viernes
+  //   // Los cursos infantiles de la escuela toninas son martes, jueves y colonia
+  //   // Los docentes de los cursos infantiles de la escuela toninas son debi e isa    
+  // }
+
+
+}
